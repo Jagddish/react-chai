@@ -6,9 +6,9 @@ import "./App.css";
 function App() {
   // useState
   const [number, setNumber] = useState(1);
-  const up = () => setNumber(number + 1);
+  const up = () => setNumber((prevState) => prevState + 1);
   const down = () => {
-    if (number >= 1) setNumber(number - 1);
+    setNumber((prevNum) => (prevNum >= 1 ? prevNum - 1 : prevNum));
   };
 
   return (
